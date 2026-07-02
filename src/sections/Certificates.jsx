@@ -15,72 +15,28 @@ function SectionLabel({ children }) {
 /* ─── Certificate data ───────────────────────────────── */
 const CERTIFICATES = [
   {
-    icon: "☕",
-    name: "Java Full Stack Development",
-    issuer: "Besant Technologies",
-    year: "2024",
-    credential: "BT-JAVA-2024-001",
-    category: "Full Stack",
-    categoryColor: "text-blue-400",
-    categoryBg: "bg-blue-500/10 border-blue-500/20",
+    title: "Java Full Stack Development",
+    organization: "Tap Academy, BTM Layout, Bengaluru",
+    duration: "6 Months",
+    description:
+      "Successfully completed an intensive 6-month Java Full Stack Development program covering Core Java, Advanced Java, JDBC, Servlets, JSP, Spring Boot fundamentals, SQL, HTML, CSS, JavaScript and React. Developed multiple full-stack applications while gaining practical experience in frontend and backend development.",
+    image: "/images/certificates/Java-FullStack.png",
+    badge: "Featured Certificate",
     border: "border-blue-500/15",
     glow: "bg-blue-600/6",
     topLine: "via-blue-500/45",
-    iconBg: "bg-blue-500/10 border-blue-500/20",
-    verifyUrl: "#",
-    skills: ["Java", "Spring Boot", "React", "MySQL"],
-    highlight: "Core certification",
   },
   {
-    icon: "🤖",
-    name: "Machine Learning with Python",
-    issuer: "Coursera — Stanford University",
+    title: "AWS Academy Cloud Foundations",
+    organization: "AWS Academy",
     year: "2024",
-    credential: "COURSERA-ML-2024",
-    category: "AI / ML",
-    categoryColor: "text-violet-400",
-    categoryBg: "bg-violet-500/10 border-violet-500/20",
-    border: "border-violet-500/15",
-    glow: "bg-violet-600/6",
-    topLine: "via-violet-500/45",
-    iconBg: "bg-violet-500/10 border-violet-500/20",
-    verifyUrl: "#",
-    skills: ["Python", "NumPy", "Scikit-learn", "TensorFlow"],
-    highlight: "Top 10% of class",
-  },
-  {
-    icon: "🛡️",
-    name: "Introduction to Cybersecurity",
-    issuer: "Cisco Networking Academy",
-    year: "2024",
-    credential: "CISCO-CYB-2024",
-    category: "Cybersecurity",
-    categoryColor: "text-emerald-400",
-    categoryBg: "bg-emerald-500/10 border-emerald-500/20",
-    border: "border-emerald-500/15",
-    glow: "bg-emerald-600/6",
-    topLine: "via-emerald-500/45",
-    iconBg: "bg-emerald-500/10 border-emerald-500/20",
-    verifyUrl: "#",
-    skills: ["Network Security", "Threats & Attacks", "Firewalls", "Encryption"],
-    highlight: "Industry recognised",
-  },
-  {
-    icon: "⚛️",
-    name: "React — The Complete Guide",
-    issuer: "Udemy",
-    year: "2023",
-    credential: "UDEMY-REACT-2023",
-    category: "Frontend",
-    categoryColor: "text-cyan-400",
-    categoryBg: "bg-cyan-500/10 border-cyan-500/20",
-    border: "border-cyan-500/15",
-    glow: "bg-cyan-600/6",
-    topLine: "via-cyan-500/45",
-    iconBg: "bg-cyan-500/10 border-cyan-500/20",
-    verifyUrl: "#",
-    skills: ["React 18", "Hooks", "Redux", "React Router"],
-    highlight: "Bestseller course",
+    description:
+      "Successfully completed the AWS Academy Cloud Foundations course, gaining knowledge of cloud computing fundamentals, AWS core services, cloud architecture, security, pricing models and best practices for deploying scalable cloud solutions.",
+    image: "/images/certificates/aws.png",
+    badge: "Cloud Computing",
+    border: "border-orange-500/15",
+    glow: "bg-orange-600/6",
+    topLine: "via-orange-500/45",
   },
 ];
 
@@ -100,92 +56,80 @@ function CertCard({ cert, index, isInView }) {
         delay: 0.1 + index * 0.1,
       }}
       whileHover={{ y: -7, scale: 1.02, transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] } }}
-      className={`group relative rounded-2xl border ${cert.border} bg-slate-900/50 backdrop-blur-xl overflow-hidden shadow-xl hover:shadow-2xl hover:border-white/[0.13] transition-shadow duration-300`}
+      className={`group relative flex flex-col h-full rounded-2xl border ${cert.border} bg-slate-900/50 backdrop-blur-xl overflow-hidden shadow-xl hover:shadow-2xl hover:border-white/[0.13] transition-all duration-300`}
     >
       {/* Top accent line */}
-      <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${cert.topLine} to-transparent`} />
+      <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent ${cert.topLine} to-transparent z-20`} />
 
       {/* Inner ambient glow */}
-      <div className={`pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full ${cert.glow} blur-2xl`} />
+      <div className={`pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full ${cert.glow} blur-2xl z-0`} />
 
       {/* Shimmer sweep */}
       <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent z-10" />
 
-      <div className="relative p-6 flex flex-col gap-5">
+      {/* Image at the top */}
+      <div className="relative w-full aspect-[4/3] sm:aspect-video overflow-hidden border-b border-white/[0.06] bg-slate-800/50 z-10">
+        <img
+          src={cert.image}
+          alt={`${cert.title} certificate`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          onError={(e) => { e.currentTarget.style.display = "none"; }}
+        />
+      </div>
 
-        {/* ── Header row ── */}
+      {/* Card body */}
+      <div className="relative p-6 flex flex-col flex-grow gap-4 z-10">
+
+        {/* Title */}
         <div className="flex items-start justify-between gap-3">
-          {/* Icon */}
-          <div className={`w-12 h-12 flex items-center justify-center rounded-xl border ${cert.iconBg} text-2xl shrink-0 shadow-inner`}>
-            {cert.icon}
-          </div>
-
-          {/* Category + year */}
-          <div className="flex flex-col items-end gap-1.5">
-            <span className={`px-2.5 py-0.5 rounded-md border text-[10px] font-semibold tracking-wide ${cert.categoryBg} ${cert.categoryColor}`}>
-              {cert.category}
-            </span>
-            <span className="text-slate-600 text-[11px] font-mono">{cert.year}</span>
-          </div>
-        </div>
-
-        {/* ── Certificate name ── */}
-        <div className="space-y-1">
-          <h3 className="text-white font-semibold text-[16px] leading-snug tracking-tight">
-            {cert.name}
+          <h3 className="text-white font-semibold text-lg leading-snug tracking-tight">
+            {cert.title}
           </h3>
-          {/* Issuer row */}
-          <div className="flex items-center gap-1.5">
-            <FiAward size={12} className="text-slate-600 shrink-0" />
-            <p className="text-slate-500 text-sm">{cert.issuer}</p>
+        </div>
+
+        {/* Badge */}
+        <div className="flex">
+          <span className="inline-flex px-2.5 py-1 rounded-md border border-white/10 bg-white/[0.04] text-[11px] font-semibold tracking-wide text-blue-300">
+            {cert.badge}
+          </span>
+        </div>
+
+        {/* Org & Duration */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <FiAward size={14} className="text-slate-500 shrink-0" />
+            <p className="text-slate-400 text-sm">{cert.organization}</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <FiCheckCircle size={14} className="text-slate-500 shrink-0" />
+            <p className="text-slate-400 text-sm">{cert.duration || cert.year}</p>
           </div>
         </div>
 
-        {/* ── Divider ── */}
-        <div className="h-px bg-white/[0.05]" />
+        {/* Description */}
+        <p className="text-slate-400 text-sm leading-relaxed mb-2 flex-grow">
+          {cert.description}
+        </p>
 
-        {/* ── Skill chips ── */}
-        <div className="flex flex-wrap gap-1.5">
-          {cert.skills.map((skill) => (
-            <span
-              key={skill}
-              className="px-2 py-0.5 rounded-md border border-white/8 bg-white/[0.03] text-slate-400 text-[10px] font-medium"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
+        {/* Divider */}
+        <div className="h-px w-full bg-white/[0.05]" />
 
-        {/* ── Credential ID ── */}
-        <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.05]">
-          <FiCheckCircle size={12} className="text-green-500/70 shrink-0" />
-          <span className="text-slate-600 text-[10px] font-mono truncate">
-            ID: {cert.credential}
-          </span>
-          <span className="ml-auto shrink-0 text-[9px] font-medium text-green-500/70 tracking-wide uppercase">
-            Verified
-          </span>
-        </div>
-
-        {/* ── Highlight badge + Verify button ── */}
-        <div className="flex items-center justify-between gap-3 pt-0.5">
-          <span className="text-slate-600 text-[11px] italic">
-            ✦ {cert.highlight}
-          </span>
-
-          <motion.a
-            href={cert.verifyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.95 }}
-            className={`group/btn relative inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border ${cert.categoryBg} ${cert.categoryColor} text-[11px] font-semibold tracking-wide overflow-hidden transition-colors duration-200 shrink-0`}
+        {/* View Certificate Button (Disabled + Tooltip) */}
+        <div className="pt-1 relative group/tooltip w-fit">
+          <button
+            disabled
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-white/10 bg-white/[0.04] text-slate-500 text-xs font-semibold tracking-wide cursor-not-allowed transition-colors"
           >
-            {/* Shine on hover */}
-            <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-500 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-            <FiExternalLink size={11} />
-            Verify
-          </motion.a>
+            <FiExternalLink size={13} />
+            View Certificate
+          </button>
+
+          {/* Tooltip */}
+          <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-max px-3 py-1.5 bg-slate-800 text-slate-300 text-[10px] font-medium rounded-md opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">
+            Verification link will be added soon.
+            {/* Arrow */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 border-[5px] border-transparent border-t-slate-800" />
+          </div>
         </div>
       </div>
     </motion.div>
@@ -245,10 +189,10 @@ export default function Certificates() {
         </motion.p>
 
         {/* ── Cards grid — 2×2 desktop, 1 col mobile ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {CERTIFICATES.map((cert, i) => (
             <CertCard
-              key={cert.name}
+              key={cert.title}
               cert={cert}
               index={i}
               isInView={isInView}
@@ -262,9 +206,9 @@ export default function Certificates() {
           className="mt-12 rounded-2xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-sm px-6 py-4 flex flex-wrap items-center justify-center gap-x-10 gap-y-3"
         >
           {[
-            { value: "4", label: "Certifications" },
-            { value: "3+", label: "Platforms" },
-            { value: "2023–24", label: "Active Years" },
+            { value: "2", label: "Certifications" },
+            { value: "2", label: "Platforms" },
+            { value: "2024", label: "Active Years" },
             { value: "100%", label: "Verified" },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-center gap-2.5">
