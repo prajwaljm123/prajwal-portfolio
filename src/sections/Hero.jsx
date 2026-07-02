@@ -101,7 +101,7 @@ const fadeIn = (delay = 0) => ({
 const SOCIALS = [
   { icon: FiGithub, href: "https://github.com/prajwaljm123", label: "GitHub" },
   { icon: FiLinkedin, href: "https://linkedin.com/in/prajwalmunnolli", label: "LinkedIn" },
-  { icon: FiMail, href: "mailto:prajwalmunnolli@gmail.com", label: "Email" },
+  { icon: FiMail, href: "mailto:prajwaljm123@gmail.com", label: "Email" },
 ];
 
 /* ══════════════════════════════════════════════════════ */

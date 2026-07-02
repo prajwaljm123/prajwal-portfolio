@@ -1,4 +1,4 @@
-﻿import { motion } from "motion/react";
+import { motion } from "motion/react";
 import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from "react-icons/fi";
 
 /* ─── Data ───────────────────────────────────────────── */
@@ -24,7 +24,7 @@ const SOCIALS = [
   },
   {
     icon:  FiMail,
-    href:  "mailto:prajwalmunnolli@gmail.com",
+    href:  "mailto:prajwaljm123@gmail.com",
     label: "Email",
     color: "hover:text-cyan-400 hover:border-cyan-400/40",
   },
