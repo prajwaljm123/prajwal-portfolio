@@ -14,20 +14,15 @@ function SectionLabel({ children }) {
 /* ─── Skill groups ───────────────────────────────────── */
 const SKILL_GROUPS = [
   {
-    group: "Languages",
-    icon: "🧠",
+    group: "Programming Languages",
+    icon: "💻",
     accent: "blue",
     border: "border-blue-500/20",
     glow: "bg-blue-600/6",
     dot: "bg-blue-400",
-    tag: "text-blue-400",
+    tag: "text-blue-300",
     tagBg: "bg-blue-500/10 border-blue-500/25",
-    skills: [
-      { name: "Java",       level: 90, icon: "☕" },
-      { name: "Python",     level: 80, icon: "🐍" },
-      { name: "JavaScript", level: 85, icon: "⚡" },
-      { name: "SQL",        level: 75, icon: "🗄️" },
-    ],
+    skills: ["Java", "Core Java", "Python", "JavaScript", "SQL", "HTML", "CSS"],
   },
   {
     group: "Frontend",
@@ -36,14 +31,9 @@ const SKILL_GROUPS = [
     border: "border-cyan-500/20",
     glow: "bg-cyan-600/6",
     dot: "bg-cyan-400",
-    tag: "text-cyan-400",
+    tag: "text-cyan-300",
     tagBg: "bg-cyan-500/10 border-cyan-500/25",
-    skills: [
-      { name: "React",       level: 88, icon: "⚛️" },
-      { name: "HTML",        level: 95, icon: "📄" },
-      { name: "CSS",         level: 85, icon: "🎨" },
-      { name: "Tailwind CSS",level: 82, icon: "💨" },
-    ],
+    skills: ["React", "Tailwind CSS", "Responsive Design"],
   },
   {
     group: "Backend",
@@ -52,12 +42,9 @@ const SKILL_GROUPS = [
     border: "border-violet-500/20",
     glow: "bg-violet-600/6",
     dot: "bg-violet-400",
-    tag: "text-violet-400",
+    tag: "text-violet-300",
     tagBg: "bg-violet-500/10 border-violet-500/25",
-    skills: [
-      { name: "Node.js",    level: 82, icon: "🟢" },
-      { name: "Express.js", level: 80, icon: "🚂" },
-    ],
+    skills: ["Node.js", "Express.js", "REST APIs", "API Integration", "Postman"],
   },
   {
     group: "Database",
@@ -66,83 +53,44 @@ const SKILL_GROUPS = [
     border: "border-emerald-500/20",
     glow: "bg-emerald-600/6",
     dot: "bg-emerald-400",
-    tag: "text-emerald-400",
+    tag: "text-emerald-300",
     tagBg: "bg-emerald-500/10 border-emerald-500/25",
-    skills: [
-      { name: "MySQL", level: 78, icon: "🐬" },
-    ],
+    skills: ["MySQL"],
   },
   {
-    group: "Tools",
+    group: "Developer Tools",
     icon: "🔧",
     accent: "amber",
     border: "border-amber-500/20",
     glow: "bg-amber-600/6",
     dot: "bg-amber-400",
-    tag: "text-amber-400",
+    tag: "text-amber-300",
     tagBg: "bg-amber-500/10 border-amber-500/25",
-    skills: [
-      { name: "Git",     level: 88, icon: "🌿" },
-      { name: "GitHub",  level: 85, icon: "🐙" },
-      { name: "VS Code", level: 92, icon: "🖥️" },
-      { name: "Postman", level: 75, icon: "📮" },
-    ],
+    skills: ["Git", "GitHub", "VS Code", "Eclipse", "Figma", "Canva"],
   },
   {
-    group: "Other",
-    icon: "🌐",
+    group: "AI & Productivity",
+    icon: "🤖",
     accent: "rose",
     border: "border-rose-500/20",
     glow: "bg-rose-600/6",
     dot: "bg-rose-400",
-    tag: "text-rose-400",
+    tag: "text-rose-300",
     tagBg: "bg-rose-500/10 border-rose-500/25",
-    skills: [
-      { name: "AI / ML",       level: 70, icon: "🤖" },
-      { name: "Cybersecurity", level: 65, icon: "🛡️" },
-      { name: "REST APIs",     level: 85, icon: "🔗" },
-    ],
+    skills: ["ChatGPT", "Claude", "AI Agents", "Prompt Engineering", "OpenRouter API", "API Keys", "Antigravity IDE"],
+  },
+  {
+    group: "Additional Knowledge",
+    icon: "📚",
+    accent: "indigo",
+    border: "border-indigo-500/20",
+    glow: "bg-indigo-600/6",
+    dot: "bg-indigo-400",
+    tag: "text-indigo-300",
+    tagBg: "bg-indigo-500/10 border-indigo-500/25",
+    skills: ["Cybersecurity Fundamentals", "Problem Solving", "Data Structures & Algorithms", "Software Development", "Team Collaboration"],
   },
 ];
-
-/* ─── Progress bar colours by accent ────────────────── */
-const BAR_COLOR = {
-  blue:    "bg-blue-500",
-  cyan:    "bg-cyan-500",
-  violet:  "bg-violet-500",
-  emerald: "bg-emerald-500",
-  amber:   "bg-amber-500",
-  rose:    "bg-rose-500",
-};
-
-/* ─── Individual skill row ───────────────────────────── */
-function SkillRow({ skill, accent, isInView, delay }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -10 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
-      transition={{ duration: 0.45, ease: "easeOut", delay }}
-      className="space-y-1.5"
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <span className="text-[13px]">{skill.icon}</span>
-          <span className="text-slate-300 text-sm font-medium">{skill.name}</span>
-        </div>
-        <span className="text-slate-600 text-[11px] font-mono">{skill.level}%</span>
-      </div>
-      {/* Track */}
-      <div className="h-1.5 w-full rounded-full bg-white/[0.08] overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: delay + 0.15 }}
-          className={`h-full rounded-full ${BAR_COLOR[accent]}`}
-        />
-      </div>
-    </motion.div>
-  );
-}
 
 /* ─── Group card ─────────────────────────────────────── */
 function GroupCard({ group, index, isInView }) {
@@ -160,66 +108,54 @@ function GroupCard({ group, index, isInView }) {
         delay: 0.1 + index * 0.08,
       }}
       whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.25, ease: [0.22, 1, 0.36, 1] } }}
-      className={`relative group rounded-2xl border ${group.border} bg-slate-900/55 backdrop-blur-xl overflow-hidden shadow-xl hover:shadow-2xl hover:border-white/[0.13] transition-shadow duration-300`}
+      className={`relative group flex flex-col h-full rounded-2xl border ${group.border} bg-slate-900/55 backdrop-blur-xl overflow-hidden shadow-xl hover:shadow-2xl hover:border-white/[0.13] transition-shadow duration-300`}
     >
       {/* Ambient glow inside card */}
       <div
-        className={`pointer-events-none absolute -top-10 -right-10 w-32 h-32 rounded-full ${group.glow} blur-2xl`}
+        className={`pointer-events-none absolute -top-10 -right-10 w-32 h-32 rounded-full ${group.glow} blur-2xl z-0`}
       />
 
       {/* Shimmer on hover */}
-      <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+      <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/[0.04] to-transparent z-10" />
 
       {/* Top accent line */}
       <div
-        className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-${group.accent}-500/50 to-transparent`}
+        className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-${group.accent}-500/50 to-transparent z-20`}
       />
 
       {/* Card content */}
-      <div className="relative p-6 space-y-5">
+      <div className="relative p-6 flex flex-col flex-grow z-10">
         {/* Header */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mb-6">
           <div
-            className={`w-9 h-9 flex items-center justify-center rounded-xl border ${group.border} bg-white/[0.03] text-lg`}
+            className={`w-11 h-11 flex items-center justify-center rounded-xl border ${group.border} bg-white/[0.03] text-xl shadow-inner shrink-0`}
           >
             {group.icon}
           </div>
           <div>
-            <p className={`text-xs font-mono font-medium tracking-widest uppercase ${group.tag}`}>
+            <h3 className="text-white font-semibold text-[17px] tracking-tight leading-tight">
               {group.group}
-            </p>
-            <p className="text-slate-500 text-[10px]">
-              {group.skills.length} {group.skills.length === 1 ? "skill" : "skills"}
-            </p>
+            </h3>
           </div>
-          <span className={`ml-auto w-2 h-2 rounded-full ${group.dot} opacity-70`} />
         </div>
 
-        {/* Divider */}
-        <div className="h-px bg-white/[0.06]" />
-
-        {/* Skill rows */}
-        <div className="space-y-4">
+        {/* Skill Chips Container */}
+        <div className="flex flex-wrap gap-2.5 mt-auto">
           {group.skills.map((skill, si) => (
-            <SkillRow
-              key={skill.name}
-              skill={skill}
-              accent={group.accent}
-              isInView={isInView}
-              delay={0.2 + index * 0.08 + si * 0.07}
-            />
-          ))}
-        </div>
-
-        {/* Skill chips (bottom) */}
-        <div className="flex flex-wrap gap-1.5 pt-1">
-          {group.skills.map((skill) => (
-            <span
-              key={skill.name}
-              className={`px-2 py-0.5 rounded-md border text-[10px] font-medium ${group.tagBg} ${group.tag}`}
+            <motion.span
+              key={skill}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.4, delay: 0.2 + index * 0.08 + si * 0.05 }}
+              whileHover={{ 
+                y: -3, 
+                scale: 1.05, 
+                boxShadow: "0 6px 20px rgba(59, 130, 246, 0.25)" 
+              }}
+              className={`px-3 py-1.5 rounded-lg border text-[12px] font-medium backdrop-blur-sm cursor-default transition-all duration-200 ${group.tagBg} ${group.tag} hover:border-blue-500/50 hover:bg-blue-500/15 hover:text-blue-100 hover:z-10`}
             >
-              {skill.name}
-            </span>
+              {skill}
+            </motion.span>
           ))}
         </div>
       </div>

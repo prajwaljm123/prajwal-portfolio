@@ -16,7 +16,7 @@ const STATS = [
   {
     value: "100+",
     label: "DSA Problems Solved",
-    sub: "Java · LeetCode",
+    sub: "Java · Logic · Algorithms",
     accent: "from-blue-500/20 to-blue-600/5",
     border: "border-blue-500/20",
     dot: "bg-blue-400",
@@ -24,9 +24,9 @@ const STATS = [
     icon: "☕",
   },
   {
-    value: "10+",
-    label: "Projects Completed",
-    sub: "Full Stack · AI · ML",
+    value: "6+",
+    label: "Full Stack & AI Projects",
+    sub: "React · Node · Python",
     accent: "from-cyan-500/20 to-cyan-600/5",
     border: "border-cyan-500/20",
     dot: "bg-cyan-400",
@@ -35,8 +35,8 @@ const STATS = [
   },
   {
     value: "Java",
-    label: "Full Stack Developer",
-    sub: "React · Node.js · MySQL",
+    label: "Primary Programming Language",
+    sub: "Core · Advanced · OOP",
     accent: "from-violet-500/20 to-violet-600/5",
     border: "border-violet-500/20",
     dot: "bg-violet-400",
@@ -46,7 +46,7 @@ const STATS = [
   {
     value: "AI & Cyber",
     label: "Continuous Learner",
-    sub: "Security · ML · Python",
+    sub: "GenAI · Security",
     accent: "from-emerald-500/20 to-emerald-600/5",
     border: "border-emerald-500/20",
     dot: "bg-emerald-400",
@@ -60,42 +60,28 @@ const BIO = [
   {
     text: (
       <>
-        I am a passionate{" "}
-        <span className="text-white font-medium">Full Stack Developer</span>{" "}
-        who enjoys building scalable web applications and solving real-world
-        problems.
+        I am a passionate <span className="text-white font-medium">Full Stack Developer</span> with a strong interest in <span className="text-white font-medium">Java</span>, <span className="text-white font-medium">Web Development</span>, <span className="text-white font-medium">Artificial Intelligence</span> and <span className="text-white font-medium">Cybersecurity</span>.
       </>
     ),
   },
   {
     text: (
       <>
-        My primary skills include{" "}
-        <span className="text-white font-medium">Java</span>,{" "}
-        <span className="text-white font-medium">React</span>,{" "}
-        <span className="text-white font-medium">Node.js</span>,{" "}
-        <span className="text-white font-medium">Express.js</span>,{" "}
-        <span className="text-white font-medium">MySQL</span> and{" "}
-        <span className="text-white font-medium">Python</span>.
+        I enjoy building scalable web applications, solving real-world problems and continuously learning new technologies. Over the past few years, I have developed multiple full-stack and AI-powered applications using modern frameworks and tools.
       </>
     ),
   },
   {
     text: (
       <>
-        I have solved{" "}
-        <span className="text-white font-medium">100+ DSA problems</span> using
-        Java and continuously improve my problem-solving skills.
+        I have completed a Full Stack Java Development course, solved <span className="text-white font-medium">100+ Data Structures and Algorithms</span> problems using Java, and successfully completed an internship where I contributed to the development of an enterprise Fleet Management System.
       </>
     ),
   },
   {
     text: (
       <>
-        I also enjoy learning{" "}
-        <span className="text-white font-medium">AI/ML</span> and{" "}
-        <span className="text-white font-medium">Cybersecurity</span> and
-        applying modern technologies in practical projects.
+        I am passionate about writing clean code, building intuitive user experiences and leveraging <span className="text-white font-medium">AI tools</span> to improve software development productivity.
       </>
     ),
   },
@@ -157,8 +143,7 @@ export default function About() {
           {...fadeUp(0.08)}
           className="text-center text-slate-500 text-base max-w-xl mx-auto mb-16"
         >
-          Passionate developer blending clean code, creativity and continuous
-          learning to build meaningful products.
+          Passionate about building modern software solutions.
         </motion.p>
 
         {/* ── Two-column layout ── */}

@@ -280,20 +280,57 @@ export default function Hero() {
               <div className="w-[340px] h-[340px] rounded-full bg-gradient-to-tr from-blue-600/25 via-cyan-500/12 to-transparent blur-3xl" />
             </div>
 
-            {/* ── Floating badge – DSA ── */}
+            {/* ── Floating badge 1: Java ── */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-3 -right-4 z-20 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl border border-white/10 bg-slate-900/85 backdrop-blur-lg shadow-2xl"
+              transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
+              whileHover={{ scale: 1.05 }}
+              className="absolute -top-4 -right-4 z-20 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl border border-white/10 bg-slate-900/85 backdrop-blur-lg shadow-2xl hover:border-white/[0.15] transition-colors"
             >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/15 text-base">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue-500/15 text-base shadow-inner">
                 ☕
               </div>
               <div>
-                <p className="text-white text-[11px] font-semibold leading-none mb-0.5">
-                  100+ DSA Solved
+                <p className="text-white text-[11px] font-semibold leading-none mb-0.5 tracking-wide">
+                  Java
                 </p>
-                <p className="text-blue-400 text-[10px] font-mono">Java </p>
+                <p className="text-blue-400 text-[10px] font-mono">Primary Language</p>
+              </div>
+            </motion.div>
+
+            {/* ── Floating badge 2: Claude ── */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              whileHover={{ scale: 1.05 }}
+              className="absolute -bottom-6 -left-5 z-20 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl border border-white/10 bg-slate-900/85 backdrop-blur-lg shadow-2xl hover:border-white/[0.15] transition-colors"
+            >
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-violet-500/15 text-base shadow-inner">
+                ✨
+              </div>
+              <div>
+                <p className="text-white text-[11px] font-semibold leading-none mb-0.5 tracking-wide">
+                  Claude
+                </p>
+                <p className="text-violet-400 text-[10px] font-mono">AI Development</p>
+              </div>
+            </motion.div>
+
+            {/* ── Floating badge 3: DSA ── */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+              whileHover={{ scale: 1.05 }}
+              className="absolute -bottom-4 right-8 z-20 flex items-center gap-2.5 px-3.5 py-2.5 rounded-2xl border border-white/10 bg-slate-900/85 backdrop-blur-lg shadow-2xl hover:border-white/[0.15] transition-colors max-sm:hidden"
+            >
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-emerald-500/15 text-base shadow-inner">
+                💻
+              </div>
+              <div>
+                <p className="text-white text-[11px] font-semibold leading-none mb-0.5 tracking-wide">
+                  100+ DSA
+                </p>
+                <p className="text-emerald-400 text-[10px] font-mono">Problem Solving</p>
               </div>
             </motion.div>
 
