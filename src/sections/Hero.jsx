@@ -99,9 +99,9 @@ const fadeIn = (delay = 0) => ({
 
 /* ─── Social links data ──────────────────────────────── */
 const SOCIALS = [
-  { icon: FiGithub,   href: "https://github.com/prajwaljm123",          label: "GitHub"   },
-  { icon: FiLinkedin, href: "https://linkedin.com/in/prajwalmunnolli",  label: "LinkedIn" },
-  { icon: FiMail,     href: "mailto:prajwalmunnolli@gmail.com",         label: "Email"    },
+  { icon: FiGithub, href: "https://github.com/prajwaljm123", label: "GitHub" },
+  { icon: FiLinkedin, href: "https://linkedin.com/in/prajwalmunnolli", label: "LinkedIn" },
+  { icon: FiMail, href: "mailto:prajwalmunnolli@gmail.com", label: "Email" },
 ];
 
 /* ══════════════════════════════════════════════════════ */
@@ -293,7 +293,7 @@ export default function Hero() {
                 <p className="text-white text-[11px] font-semibold leading-none mb-0.5">
                   100+ DSA Solved
                 </p>
-                <p className="text-blue-400 text-[10px] font-mono">Java · LeetCode</p>
+                <p className="text-blue-400 text-[10px] font-mono">Java </p>
               </div>
             </motion.div>
 
