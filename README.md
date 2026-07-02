@@ -1,16 +1,67 @@
-# React + Vite
+# Prajwal Munnolli – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, modern, and highly interactive personal portfolio website showcasing my skills, projects, certifications, and academic journey. Built with **React**, **Vite**, **Tailwind CSS v4**, and **Motion (Framer Motion)**, this portfolio features a sleek dark theme, glassmorphism aesthetics, and sophisticated micro-animations inspired by Linear and Vercel.
 
-Currently, two official plugins are available:
+## 🌟 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*(Add your hosted link here, e.g., Vercel, Netlify, or GitHub Pages)*
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Premium Dark Mode UI:** High-contrast, sleek design utilizing glassmorphism and subtle gradient glows.
+- **Fluid Animations:** Cohesive entrance, stagger, and hover animations powered by Motion.
+- **Dynamic Projects Section:** Modal-based project details to cleanly present deep insights into each highlighted project.
+- **Fully Responsive:** Optimized layouts ensuring a beautiful experience on both desktop and mobile devices.
+- **Modern Tech Stack:** Fast loading times and developer-friendly setup powered by Vite.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** [React](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** [Motion / Framer Motion](https://motion.dev/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/prajwaljm123/prajwal-portfolio.git
+   cd prajwal-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   Navigate to `http://localhost:5173` to view the portfolio.
+
+## 🏗️ Building for Production
+
+To create an optimized production build:
+```bash
+npm run build
+```
+This will generate a `dist` directory with your minified assets ready for deployment.
+
+## 📫 Contact
+
+- **Email:** prajwaljm123@gmail.com
+- **LinkedIn:** [prajwalmunnolli](https://linkedin.com/in/prajwalmunnolli)
+- **GitHub:** [prajwaljm123](https://github.com/prajwaljm123)
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
